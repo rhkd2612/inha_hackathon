@@ -55,7 +55,7 @@ jobs:
           aws-region: ap-northeast-2
       # S3에 빌드된 파일 업로드
       - name: Upload to AWS S3
-        run: aws s3 cp --region ap-northeast-2 inha-hkt.zip s3://s3-inha-hkt-cd/inha-hkt-was.zip
+        run: aws s3 cp --region ap-northeast-2 inha-hkt-was.zip s3://s3-inha-hkt-cd/inha-hkt-was.zip
       # Deploy
       - name: Code Deploy
         run: aws deploy create-deployment --application-name cd-inha-hkt --deployment-config-name CodeDeployDefault.OneAtATime --file-exists-behavior OVERWRITE --deployment-group-name grp-inha-hkt-deployment --s3-location bucket=s3-inha-hkt-cd,bundleType=zip,key=inha-hkt-was.zip
