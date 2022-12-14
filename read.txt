@@ -1,0 +1,6 @@
+.git
+.github
+gradle
+.gitignore
+appspec
+빼고 다 지워도 된다
