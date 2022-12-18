@@ -22,7 +22,9 @@ public class PostitService {
     private final UserRepository userRepository;
 
     public List<PostitDto> getPostitList(PostitListForm postitListForm) {
-        List<Postit> allByBuildingAddress = postitRepository.findAllByBuildingAddress(postitListForm.getBuildingAddress());
+        String buildingAddress = userRepository.findById(postitListForm.getUserId()).get().getBuildingAddress();
+        
+        List<Postit> allByBuildingAddress = postitRepository.findAllByBuildingAddress(buildingAddress);
         List<PostitDto> ret = allByBuildingAddress.stream().map(PostitDto::new).collect(Collectors.toList());
 
         if(!postitListForm.getDtype().equals("recent")){
@@ -40,7 +42,7 @@ public class PostitService {
         return ret;
     }
 
-    public void newPostit(PostitCreateForm postitCreateForm) {
+    public Long newPostit(PostitCreateForm postitCreateForm) {
         Postit createdPostit = Postit.newPost(postitCreateForm);
         createdPostit.setCreateTime(new Date());
 
@@ -55,5 +57,7 @@ public class PostitService {
         writeUser.get().addPostit(createdPostit);
 
         postitRepository.save(createdPostit);
+
+        return createdPostit.getId();
     }
 }

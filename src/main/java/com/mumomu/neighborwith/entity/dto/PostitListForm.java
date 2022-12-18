@@ -15,6 +15,6 @@ import lombok.NoArgsConstructor;
 public class PostitListForm {
     @ApiModelProperty(example = "SharePostit")
     private String dtype;
-    @ApiModelProperty(example = "빌딩 주소")
-    private String buildingAddress;
+    @ApiModelProperty(example = "유저 아이디")
+    private Long userId;
 }

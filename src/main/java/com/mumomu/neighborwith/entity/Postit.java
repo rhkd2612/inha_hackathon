@@ -11,12 +11,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
+import lombok.extern.slf4j.Slf4j;
 
 import javax.persistence.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-@Entity
+@Entity @Slf4j
 @Table(name = "postit")
 @Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn
@@ -51,6 +52,9 @@ public class Postit {
     public static Postit newPost(PostitCreateForm postitCreateForm){
         String curDtype = postitCreateForm.getDtype();
 
+        log.info(curDtype);
+
+        // TODO dtype이 없어도 잘 된다
         switch (curDtype) {
             case "SharePostit":
                 return SharePostit.builder()

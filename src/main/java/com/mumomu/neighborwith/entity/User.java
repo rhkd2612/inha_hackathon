@@ -62,7 +62,13 @@ public class User {
     public void addPostit(Postit postit){
         postits.add(postit);
     }
+    public void addSendLetter(Letter letter){
+        sendLetters.add(letter);
+    }
 
+    public void addReceiveLetter(Letter letter){
+        receiveLetters.add(letter);
+    }
     public static User newUser(UserCreateForm userCreateForm){
         return User.builder()
                 .auth(USER_AUTH.valueOf(userCreateForm.getAuth()))

@@ -40,9 +40,9 @@ public class UserController {
     }
 
     @PostMapping("/new")
-    @Operation(summary = "게시글 작성", description = "게시글을 작성합니다")
-    @ApiResponse(responseCode = "201", description = "게시글 작성 성공")
-    @ApiResponse(responseCode = "400", description = "게시글 작성 실패")
+    @Operation(summary = "유저 생성", description = "유저를 생성합니다, 유저 아이디 반환")
+    @ApiResponse(responseCode = "201", description = "유저 생성 성공")
+    @ApiResponse(responseCode = "400", description = "유저 생성 실패")
     public ResponseEntity<?> newUser(@RequestBody UserCreateForm userCreateForm){
         Long userId;
         try {

@@ -1,6 +1,7 @@
 package com.mumomu.neighborwith.entity;
 
 import com.mumomu.neighborwith.common.SimpleDateFormatter;
+import com.mumomu.neighborwith.entity.dto.LetterCreateForm;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -45,5 +46,13 @@ public class Letter {
 
     public void setReceiver(User receiver) {
         this.receiver = receiver;
+    }
+
+    public static Letter newLetter(LetterCreateForm letterCreateForm){
+        return Letter.builder()
+                .postitTitle(letterCreateForm.getPostitTitle())
+                .content(letterCreateForm.getContent())
+                .isAnonymous(letterCreateForm.isAnonymous())
+                .build();
     }
 }

@@ -23,10 +23,10 @@ import java.util.List;
 public class PostitController {
     private final PostitService postitService;
 
-    @GetMapping("/list")
+    @PostMapping("/list")
     @Operation(summary = "게시글 리스트 반환", description = "게시글 리스트를 반환합니다. dtype에 recent를 넣을경우 dtype에 상관없이 최신 글을 불러옵니다.")
     @ApiResponse(responseCode = "200", description = "게시글 리스트 반환 성공")
-    public ResponseEntity<?> getPostitList(@RequestBody PostitListForm postitListForm){
+    public ResponseEntity<?> getPostitList(@ModelAttribute PostitListForm postitListForm){
         List<PostitDto> postitDtoList = postitService.getPostitList(postitListForm);
         return new ResponseEntity<>(postitDtoList, HttpStatus.OK);
     }
@@ -36,12 +36,13 @@ public class PostitController {
     @ApiResponse(responseCode = "201", description = "게시글 작성 성공")
     @ApiResponse(responseCode = "400", description = "게시글 작성 실패")
     public ResponseEntity<?> newPostit(@RequestBody PostitCreateForm postitCreateForm){
+        Long postId;
         try {
-            postitService.newPostit(postitCreateForm);
+            postId = postitService.newPostit(postitCreateForm);
         } catch(IllegalArgumentException e){
             log.error(e.getMessage());
             return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
-        return new ResponseEntity(HttpStatus.CREATED);
+        return new ResponseEntity(postId, HttpStatus.CREATED);
     }
 }
