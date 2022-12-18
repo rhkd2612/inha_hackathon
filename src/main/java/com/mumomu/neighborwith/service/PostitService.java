@@ -1,5 +1,6 @@
 package com.mumomu.neighborwith.service;
 
+import com.mumomu.neighborwith.entity.Letter;
 import com.mumomu.neighborwith.entity.User;
 import com.mumomu.neighborwith.entity.dto.*;
 import com.mumomu.neighborwith.entity.Postit;
@@ -22,6 +23,16 @@ public class PostitService {
     private final PostitRepository postitRepository;
     private final UserRepository userRepository;
     private final LetterService letterService;
+
+    public PostitDto getPostit(Long postitId) {
+        Optional<Postit> optFindPostit = postitRepository.findById(postitId);
+
+        if(optFindPostit.isEmpty())
+            throw new IllegalArgumentException("존재하지 않는 게시글입니다.");
+
+        Postit findPostit = optFindPostit.get();
+        return new PostitDto(findPostit);
+    }
 
     public List<PostitDto> getPostitList(PostitListForm postitListForm) {
         String buildingAddress = userRepository.findById(postitListForm.getUserId()).get().getBuildingAddress();

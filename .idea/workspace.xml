@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88a320e0-6624-4d59-aad5-07d2b6fa7a8f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/dto/PostitParticipateForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/controller/PostitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/controller/PostitController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/dto/LetterDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/dto/LetterDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/postittype/CourierPostit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/postittype/CourierPostit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/postittype/DeliveryPostit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/postittype/DeliveryPostit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/postittype/SharePostit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/postittype/SharePostit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/service/LetterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/service/LetterService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/service/PostitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/service/PostitService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -175,7 +168,7 @@
       <updated>1671028921931</updated>
       <workItem from="1671028923130" duration="2703000" />
       <workItem from="1671039298346" duration="393000" />
-      <workItem from="1671395831792" duration="1008000" />
+      <workItem from="1671395831792" duration="1538000" />
     </task>
     <servers />
   </component>

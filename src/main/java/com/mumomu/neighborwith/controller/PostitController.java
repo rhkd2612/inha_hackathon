@@ -32,6 +32,20 @@ public class PostitController {
         return new ResponseEntity<>(postitDtoList, HttpStatus.OK);
     }
 
+    @GetMapping("/{postitId}")
+    @Operation(summary = "특정 게시글 반환", description = "게시글을 반환합니다.")
+    @ApiResponse(responseCode = "200", description = "게시글 반환 성공")
+    public ResponseEntity<?> getPostitList(@PathVariable Long postitId){
+        PostitDto postitDto;
+        try{
+            postitDto = postitService.getPostit(postitId);
+        } catch (IllegalArgumentException e){
+            log.error(e.getMessage());
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+        }
+        return new ResponseEntity<>(postitDto, HttpStatus.OK);
+    }
+
     @PostMapping("/new")
     @Operation(summary = "게시글 작성", description = "게시글을 작성합니다")
     @ApiResponse(responseCode = "201", description = "게시글 작성 성공")
