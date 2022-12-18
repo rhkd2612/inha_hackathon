@@ -11,9 +11,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -25,8 +23,21 @@ public class PostitService {
 
     public List<PostitDto> getPostitList(PostitListForm postitListForm) {
         List<Postit> allByBuildingAddress = postitRepository.findAllByBuildingAddress(postitListForm.getBuildingAddress());
-        return allByBuildingAddress.stream().filter(p -> p.getDtype()
-                .equals(postitListForm.getDtype())).map(PostitDto::new).collect(Collectors.toList());
+        List<PostitDto> ret = allByBuildingAddress.stream().map(PostitDto::new).collect(Collectors.toList());
+
+        if(!postitListForm.getDtype().equals("recent")){
+            ret = allByBuildingAddress.stream().filter(p -> p.getDtype()
+                    .equals(postitListForm.getDtype())).map(PostitDto::new).collect(Collectors.toList());
+        }
+
+        Collections.sort(ret, new Comparator<PostitDto>() {
+            @Override
+            public int compare(PostitDto p1, PostitDto p2) {
+                return p2.getCreateTime().compareTo(p1.getCreateTime());
+            }
+        });
+
+        return ret;
     }
 
     public void newPostit(PostitCreateForm postitCreateForm) {
@@ -40,6 +51,8 @@ public class PostitService {
 
         createdPostit.setUser(writeUser.get());
         createdPostit.setBuildingAddress(writeUser.get().getBuildingAddress());
+
+        writeUser.get().addPostit(createdPostit);
 
         postitRepository.save(createdPostit);
     }

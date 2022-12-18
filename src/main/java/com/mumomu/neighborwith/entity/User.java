@@ -1,6 +1,7 @@
 package com.mumomu.neighborwith.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.mumomu.neighborwith.entity.dto.UserCreateForm;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -56,5 +57,20 @@ public class User {
         result.addAll(receiveLetters);
 
         return result;
+    }
+
+    public void addPostit(Postit postit){
+        postits.add(postit);
+    }
+
+    public static User newUser(UserCreateForm userCreateForm){
+        return User.builder()
+                .auth(USER_AUTH.valueOf(userCreateForm.getAuth()))
+                .name(userCreateForm.getName())
+                .tel(userCreateForm.getTel())
+                .buildingAddress(userCreateForm.getBuildingAddress())
+                .userAddress(userCreateForm.getUserAddress())
+                //.deedImage(userCreateForm.getDeedImage())
+                .build();
     }
 }

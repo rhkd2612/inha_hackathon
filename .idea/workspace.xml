@@ -5,20 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88a320e0-6624-4d59-aad5-07d2b6fa7a8f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/common/SimpleDateFormatter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/controller/PostitController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/dto/PostitCreateForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/dto/PostitDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/dto/PostitListForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/postittype/GeneralPostit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/service/PostitService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/dto/UserCreateForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/dto/UserDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/Letter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/Letter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/Postit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/Postit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/Report.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/postittype/CourierPostit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/postittype/CourierPostit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/postittype/DeliveryPostit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/postittype/DeliveryPostit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/repository/PostitRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/repository/PostitRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/controller/PostitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/controller/PostitController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/service/PostitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/service/PostitService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,6 +99,8 @@
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.mumomu.neighborwith.entity.dto" />
+      <recent name="com.mumomu.neighborwith.service" />
+      <recent name="com.mumomu.neighborwith.controller" />
       <recent name="com.mumomu.neighborwith.entity.postittype" />
       <recent name="com.mumomu.neighborwith.repository" />
     </key>
@@ -195,9 +191,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/service/PostitService.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="1" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/service/UserService.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
