@@ -4,6 +4,8 @@ import com.mumomu.neighborwith.entity.Postit;
 import com.mumomu.neighborwith.entity.User;
 import com.mumomu.neighborwith.entity.postittype.CourierPostit;
 import com.mumomu.neighborwith.entity.postittype.DeliveryPostit;
+import com.mumomu.neighborwith.entity.postittype.GeneralPostit;
+import com.mumomu.neighborwith.entity.postittype.SharePostit;
 import io.swagger.annotations.ApiModel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -45,21 +47,31 @@ public class PostitDto {
         this.isAnonymous = postit.isAnonymous();
 
         if(!this.dtype.equals("GeneralPostit")){
-            // 나눔 게시글, 배달 게시글, 택배 게시글
-            this.place = ((DeliveryPostit)postit).getPlace();
-            this.curParticipantCount = ((DeliveryPostit)postit).getCurParticipantCount();
-            this.totalParticipantCount = ((DeliveryPostit)postit).getTotalParticipantCount();
+            if(this.dtype.equals("SharePostit")){
+                this.place = ((SharePostit)postit).getPlace();
+                this.curParticipantCount = ((SharePostit)postit).getCurParticipantCount();
+                this.totalParticipantCount = ((SharePostit)postit).getTotalParticipantCount();
+            } else {
+                if (this.dtype.equals("CourierPostit")){
+                    this.place = ((CourierPostit)postit).getPlace();
+                    this.curParticipantCount = ((CourierPostit)postit).getCurParticipantCount();
+                    this.totalParticipantCount = ((CourierPostit)postit).getTotalParticipantCount();
 
-            // 배달 게시글, 택배 게시글
-            if(!this.dtype.equals("SharePostit")){
-                this.place = ((DeliveryPostit)postit).getPlace();
-                this.curParticipantCount = ((DeliveryPostit)postit).getCurParticipantCount();
-                this.totalParticipantCount = ((DeliveryPostit)postit).getTotalParticipantCount();
+                    this.price = ((CourierPostit)postit).getPrice();
+                    this.fee = ((CourierPostit)postit).getFee();
+                    this.totalPrice = ((CourierPostit)postit).getTotalPrice();
+
+                    this.link = ((CourierPostit) postit).getLink();
+                } else{
+                    this.place = ((DeliveryPostit)postit).getPlace();
+                    this.curParticipantCount = ((DeliveryPostit)postit).getCurParticipantCount();
+                    this.totalParticipantCount = ((DeliveryPostit)postit).getTotalParticipantCount();
+
+                    this.price = ((DeliveryPostit)postit).getPrice();
+                    this.fee = ((DeliveryPostit)postit).getFee();
+                    this.totalPrice = ((DeliveryPostit)postit).getTotalPrice();
+                }
             }
-
-            // 택배 게시글
-            if(this.dtype.equals("CourierPostit"))
-                this.link = ((CourierPostit)postit).getLink();
         }
     }
 }

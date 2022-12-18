@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88a320e0-6624-4d59-aad5-07d2b6fa7a8f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/controller/PostitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/controller/PostitController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/controller/ReportController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/dto/ReportCreateForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/dto/ReportDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/service/ReportService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/Report.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/dto/PostitDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/dto/PostitDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/repository/ReportRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/repository/ReportRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,8 +100,8 @@
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.mumomu.neighborwith.controller" />
-      <recent name="com.mumomu.neighborwith.entity.dto" />
       <recent name="com.mumomu.neighborwith.service" />
+      <recent name="com.mumomu.neighborwith.entity.dto" />
       <recent name="com.mumomu.neighborwith.entity.postittype" />
       <recent name="com.mumomu.neighborwith.repository" />
     </key>

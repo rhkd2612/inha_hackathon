@@ -1,6 +1,7 @@
 package com.mumomu.neighborwith.entity;
 
 import com.mumomu.neighborwith.common.SimpleDateFormatter;
+import com.mumomu.neighborwith.entity.dto.ReportCreateForm;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -32,5 +33,17 @@ public class Report {
 
     public void setCreateTime(Date createTime) {
         this.createTime = SimpleDateFormatter.formatDateToString(createTime);
+    }
+
+    public void setSender(User sender) {
+        this.sender = sender;
+    }
+
+    public static Report newReport(ReportCreateForm reportCreateForm){
+        return Report.builder()
+                .content(reportCreateForm.getContent())
+                .ownerTel(reportCreateForm.getOwnerTel())
+                .isAnonymous(reportCreateForm.isAnonymous())
+                .build();
     }
 }
