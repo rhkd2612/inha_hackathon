@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "user")
@@ -37,6 +38,10 @@ public class User {
     private String buildingAddress;
     private String userAddress; // 닉네임으로 사용
     private String deedImage;
+
+    public void setPostits(List<Postit> postits) {
+        this.postits = postits;
+    }
 
     // 받은 모든 쪽지 반환
     public List<Letter> getTotalLetters(){
