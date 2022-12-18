@@ -1,5 +1,6 @@
 package com.mumomu.neighborwith.entity;
 
+import com.mumomu.neighborwith.common.SimpleDateFormatter;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -24,8 +25,12 @@ public class Report {
     @JoinColumn(referencedColumnName = "user_id")
     private User sender;
 
-    private Date createTime;
+    private String createTime;
     private String content;
     private String ownerTel;
     private boolean isAnonymous;
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = SimpleDateFormatter.formatDateToString(createTime);
+    }
 }

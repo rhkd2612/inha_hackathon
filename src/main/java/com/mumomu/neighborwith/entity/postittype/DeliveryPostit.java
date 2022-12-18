@@ -18,8 +18,7 @@ public class DeliveryPostit extends Postit {
     private int curParticipantCount;
     private int totalParticipantCount;
 
-    private String link;
     private int price;
     private int fee;
-    private int total_price;
+    private int totalPrice;
 }

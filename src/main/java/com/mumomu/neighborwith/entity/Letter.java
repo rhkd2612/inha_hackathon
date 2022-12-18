@@ -1,5 +1,6 @@
 package com.mumomu.neighborwith.entity;
 
+import com.mumomu.neighborwith.common.SimpleDateFormatter;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -30,9 +31,13 @@ public class Letter {
     // Null이여도 되나, 있으면 게시글 반환
     private String postitTitle;
 
-    private Date createTime;
+    private String createTime;
     private String content;
     private boolean isAnonymous;
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = SimpleDateFormatter.formatDateToString(createTime);
+    }
 
     public void setSender(User sender) {
         this.sender = sender;

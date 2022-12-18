@@ -11,15 +11,7 @@ import javax.persistence.Entity;
 
 @Entity
 @SuperBuilder @Getter
-@NoArgsConstructor @AllArgsConstructor
-@DiscriminatorValue("CourierPostit")
-public class CourierPostit extends Postit {
-    private String place;
-    private int curParticipantCount;
-    private int totalParticipantCount;
-
-    private String link;
-    private int price;
-    private int fee;
-    private int totalPrice;
+@AllArgsConstructor
+@DiscriminatorValue("GeneralPostit")
+public class GeneralPostit extends Postit {
 }
