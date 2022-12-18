@@ -2,6 +2,7 @@ package com.mumomu.neighborwith.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -29,5 +30,10 @@ public class SwaggerConfig {
                 .apis(RequestHandlerSelectors.basePackage("com.mumomu.neighborwith"))
                 .paths(PathSelectors.ant("/**"))
                 .build();
+    }
+
+    @Bean
+    public InternalResourceViewResolver defaultViewResolver() {
+        return new InternalResourceViewResolver();
     }
 }
