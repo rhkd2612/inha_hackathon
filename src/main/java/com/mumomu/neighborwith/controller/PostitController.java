@@ -23,7 +23,7 @@ import java.util.List;
 public class PostitController {
     private final PostitService postitService;
 
-    @PostMapping("/list")
+    @GetMapping("/list")
     @Operation(summary = "게시글 리스트 반환", description = "게시글 리스트를 반환합니다. dtype에 recent를 넣을경우 dtype에 상관없이 최신 글을 불러옵니다.")
     @ApiResponse(responseCode = "200", description = "게시글 리스트 반환 성공")
     public ResponseEntity<?> getPostitList(@ModelAttribute PostitListForm postitListForm){

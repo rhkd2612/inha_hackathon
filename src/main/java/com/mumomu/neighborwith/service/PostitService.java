@@ -23,7 +23,7 @@ public class PostitService {
 
     public List<PostitDto> getPostitList(PostitListForm postitListForm) {
         String buildingAddress = userRepository.findById(postitListForm.getUserId()).get().getBuildingAddress();
-        
+
         List<Postit> allByBuildingAddress = postitRepository.findAllByBuildingAddress(buildingAddress);
         List<PostitDto> ret = allByBuildingAddress.stream().map(PostitDto::new).collect(Collectors.toList());
 
