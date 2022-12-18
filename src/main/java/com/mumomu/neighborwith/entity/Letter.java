@@ -20,11 +20,11 @@ public class Letter {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
+    @JoinColumn(referencedColumnName = "user_id")
     private User sender;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
+    @JoinColumn(referencedColumnName = "user_id")
     private User receiver;
 
     // Null이여도 되나, 있으면 게시글 반환

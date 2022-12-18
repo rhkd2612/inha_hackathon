@@ -22,7 +22,7 @@ public class Postit {
     protected Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
+    @JoinColumn(referencedColumnName = "user_id")
     protected User user;
 
     protected String title;
