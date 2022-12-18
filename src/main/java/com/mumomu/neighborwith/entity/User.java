@@ -39,14 +39,21 @@ public class User {
     private String userAddress; // 닉네임으로 사용
     private String deedImage;
 
+    public void setSendLetters(List<Letter> sendLetters) {
+        this.sendLetters = sendLetters;
+    }
+
     public void setPostits(List<Postit> postits) {
         this.postits = postits;
     }
 
     // 받은 모든 쪽지 반환
+    // 가공은 서비스단에서
     public List<Letter> getTotalLetters(){
         List<Letter> result = new ArrayList<>();
-        result = sendLetters + receiveLetters;
+
+        result.addAll(sendLetters);
+        result.addAll(receiveLetters);
 
         return result;
     }
