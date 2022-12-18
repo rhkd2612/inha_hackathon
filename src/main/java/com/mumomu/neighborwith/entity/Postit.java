@@ -58,12 +58,20 @@ public class Postit {
         switch (curDtype) {
             case "SharePostit":
                 return SharePostit.builder()
+                        .title(postitCreateForm.getTitle())
+                        .content(postitCreateForm.getContent())
+                        .image(postitCreateForm.getImage())
+                        .isAnonymous(postitCreateForm.isAnonymous())
                         .place(postitCreateForm.getPlace())
                         .curParticipantCount(0)
                         .totalParticipantCount(postitCreateForm.getTotalParticipantCount())
                         .build();
             case "DeliveryPostit":
                 return DeliveryPostit.builder()
+                        .title(postitCreateForm.getTitle())
+                        .content(postitCreateForm.getContent())
+                        .image(postitCreateForm.getImage())
+                        .isAnonymous(postitCreateForm.isAnonymous())
                         .place(postitCreateForm.getPlace())
                         .curParticipantCount(0)
                         .totalParticipantCount(postitCreateForm.getTotalParticipantCount())
@@ -73,6 +81,10 @@ public class Postit {
                         .build();
             case "CourierPostit":
                 return CourierPostit.builder()
+                        .title(postitCreateForm.getTitle())
+                        .content(postitCreateForm.getContent())
+                        .image(postitCreateForm.getImage())
+                        .isAnonymous(postitCreateForm.isAnonymous())
                         .place(postitCreateForm.getPlace())
                         .curParticipantCount(0)
                         .totalParticipantCount(postitCreateForm.getTotalParticipantCount())
