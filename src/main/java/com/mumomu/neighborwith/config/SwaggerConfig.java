@@ -32,8 +32,8 @@ public class SwaggerConfig {
                 .build();
     }
 
-    @Bean
-    public InternalResourceViewResolver defaultViewResolver() {
-        return new InternalResourceViewResolver();
-    }
+//    @Bean
+//    public InternalResourceViewResolver defaultViewResolver() {
+//        return new InternalResourceViewResolver();
+//    }
 }
