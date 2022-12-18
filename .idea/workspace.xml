@@ -5,14 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88a320e0-6624-4d59-aad5-07d2b6fa7a8f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/controller/ReportController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/dto/ReportCreateForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/dto/ReportDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/service/ReportService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/dto/PostitParticipateForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/Report.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/dto/PostitDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/dto/PostitDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/repository/ReportRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/repository/ReportRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/controller/PostitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/controller/PostitController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/dto/LetterDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/dto/LetterDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/postittype/CourierPostit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/postittype/CourierPostit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/postittype/DeliveryPostit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/postittype/DeliveryPostit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/postittype/SharePostit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/entity/postittype/SharePostit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/service/LetterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/service/LetterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/service/PostitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mumomu/neighborwith/service/PostitService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,10 +84,12 @@
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.17",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors"
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
+    "spring.configuration.checksum": "7dab970233a38a641da178640f796408"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -171,6 +175,7 @@
       <updated>1671028921931</updated>
       <workItem from="1671028923130" duration="2703000" />
       <workItem from="1671039298346" duration="393000" />
+      <workItem from="1671395831792" duration="1008000" />
     </task>
     <servers />
   </component>

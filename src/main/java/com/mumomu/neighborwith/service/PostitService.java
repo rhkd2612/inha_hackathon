@@ -1,10 +1,11 @@
 package com.mumomu.neighborwith.service;
 
 import com.mumomu.neighborwith.entity.User;
-import com.mumomu.neighborwith.entity.dto.PostitCreateForm;
-import com.mumomu.neighborwith.entity.dto.PostitListForm;
+import com.mumomu.neighborwith.entity.dto.*;
 import com.mumomu.neighborwith.entity.Postit;
-import com.mumomu.neighborwith.entity.dto.PostitDto;
+import com.mumomu.neighborwith.entity.postittype.CourierPostit;
+import com.mumomu.neighborwith.entity.postittype.DeliveryPostit;
+import com.mumomu.neighborwith.entity.postittype.SharePostit;
 import com.mumomu.neighborwith.repository.PostitRepository;
 import com.mumomu.neighborwith.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -20,6 +21,7 @@ import java.util.stream.Collectors;
 public class PostitService {
     private final PostitRepository postitRepository;
     private final UserRepository userRepository;
+    private final LetterService letterService;
 
     public List<PostitDto> getPostitList(PostitListForm postitListForm) {
         String buildingAddress = userRepository.findById(postitListForm.getUserId()).get().getBuildingAddress();
@@ -59,5 +61,38 @@ public class PostitService {
         postitRepository.save(createdPostit);
 
         return createdPostit.getId();
+    }
+
+    public void participatePostit(PostitParticipateForm postitParticipateForm) {
+        Optional<User> optParticipateUser = userRepository.findById(postitParticipateForm.getUserId());
+        Optional<Postit> optPostit = postitRepository.findById(postitParticipateForm.getId());
+
+        if(optParticipateUser.isEmpty())
+            throw new IllegalArgumentException("존재하지 않는 유저 아이디입니다.");
+        if(optPostit.isEmpty())
+            throw new IllegalArgumentException("존재하지 않는 게시글 아이디입니다.");
+
+        User participateUser = optParticipateUser.get();
+        Postit postit = optPostit.get();
+
+        boolean success = true;
+
+        switch(postit.getDtype()){
+            case "SharePostit":
+                success = ((SharePostit)postit).participant();
+                break;
+            case "DeliveryPostit":
+                success = ((DeliveryPostit)postit).participant();
+                break;
+            case "CourierPostit":
+                success = ((CourierPostit)postit).participant();
+                break;
+        }
+
+        if(success) {
+            letterService.newLetter(
+                    new LetterCreateForm(participateUser.getId(), postit.getUser().getId(), postit.getTitle(), "활동에 참여하였습니다.", false)
+            );
+        }
     }
 }

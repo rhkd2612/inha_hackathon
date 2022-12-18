@@ -36,7 +36,6 @@ public class LetterService {
             throw new IllegalArgumentException("존재하지 않는 사용자입니다.");
 
         User findUser = optFindUser.get();
-
         List<LetterDto> ret = findUser.getTotalLetters().stream().map(l -> new LetterDto(l, l.getSender(), l.getReceiver())).collect(Collectors.toList());
 
         Collections.sort(ret, new Comparator<LetterDto>() {

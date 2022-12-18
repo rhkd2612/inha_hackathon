@@ -18,4 +18,13 @@ public class SharePostit extends Postit {
     private String place;
     private int curParticipantCount;
     private int totalParticipantCount;
+
+    public boolean participant(){
+        if(curParticipantCount + 1 <= totalParticipantCount){
+            curParticipantCount += 1;
+            return true;
+        }
+
+        return false;
+    }
 }

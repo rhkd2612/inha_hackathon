@@ -22,4 +22,13 @@ public class CourierPostit extends Postit {
     private int price;
     private int fee;
     private int totalPrice;
+
+    public boolean participant(){
+        if(curParticipantCount + 1 <= totalParticipantCount){
+            curParticipantCount += 1;
+            return true;
+        }
+
+        return false;
+    }
 }
